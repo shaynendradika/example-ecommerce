@@ -39,7 +39,7 @@ jobs:
             chmod -R 775 storage bootstrap/cache
 
             rm -rf storage/app/public/products
-            php artisan migrate:fresh --seed --force
+            php artisan migrate --force
             php artisan optimize
 
             pm2 startOrReload ecosystem.config.cjs --update-env

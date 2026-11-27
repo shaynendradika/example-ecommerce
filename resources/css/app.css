@@ -1,0 +1,72 @@
+@import 'tailwindcss';
+
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+
+@theme {
+    --font-sans:
+        'Instrument Sans', ui-sans-serif, system-ui, sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Color Emoji';
+    --font-serif: 'Lora', Georgia, serif;
+    --color-page: #fafaf6;
+    --color-surface: #fffefa;
+    --color-ink: #24382d;
+    --color-muted: #5c7062;
+    --color-brand: #2f6047;
+    --color-divider: #e5ebe2;
+    --color-placeholder: #65796b;
+}
+
+@utility scrollbar-brand {
+    scrollbar-width: thin;
+    scrollbar-color: color-mix(in srgb, var(--color-brand) 45%, transparent)
+        var(--color-divider);
+
+    &::-webkit-scrollbar {
+        height: 6px;
+    }
+
+    &::-webkit-scrollbar-track {
+        border-radius: 9999px;
+        background-color: var(--color-divider);
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 9999px;
+        background-color: color-mix(
+            in srgb,
+            var(--color-brand) 45%,
+            transparent
+        );
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: var(--color-brand);
+    }
+}
+
+.admin-layout .admin-primary-link {
+    background-color: #2f6047;
+    color: #fff;
+}
+
+.admin-layout .admin-primary-link:hover {
+    background-color: #234b37;
+    color: #fff;
+}
+
+.admin-layout .admin-workspace-link,
+.admin-layout .admin-workspace-link:hover {
+    background-color: #fffefa;
+    color: #293f32;
+}
+
+@media (max-width: 991px) {
+    .admin-layout > .ant-layout-sider {
+        position: fixed;
+        inset-block: 0;
+        inset-inline-start: 0;
+        z-index: 20;
+    }
+}
